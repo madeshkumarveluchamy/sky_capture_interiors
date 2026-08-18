@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: "Futura";
+  src: url("../../../NewFonts/Futura Now Headline.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("../../../NewFonts/Futura Now Headline.woff2") format("woff2");
+  font-weight: 700;
+}
+
+
+@media (min-width: 769px) {
+  .story-project-work-header {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important; 
+    justify-content: space-between !important;
+    width: 100%;
+  }
+
+  /* 1. Left Item (Recent Work) */
+  .story-project-title-container {
+    flex: 1 1 0% !important; /* மூன்றும் சமமான width எடுக்க */
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  /* 2. Center Item (Featured Works) */
+  .story-project-section-title {
+    flex: 1 1 0% !important; /* மூன்றும் சமமான width எடுக்க */
+    text-align: center !important;
+    display: flex;
+    justify-content: center;
+    margin: 0 !important;
+  }
+
+  /* 3. Right Item (Description) */
+  .story-project-section-desc-wrk {
+    flex: 1 1 0% !important; /* மூன்றும் சமமான width எடுக்க */
+    text-align: right !important; /* Text-ஐ வலது பக்கம் சீரமைக்க */
+    max-width: 100% !important; /* உங்களின் பழைய 400px max-width-ஐ override செய்ய */
+    padding-top: 0 !important;
+  }
+}
+
+/* =========================================
+   Base Layout & Header (Desktop Default)
+========================================= */
+.story-project-featured-sections {
+  background: #fff;
+  padding: 60px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.story-project-work-header {
+  margin-bottom: 40px;
+}
+
+.story-project-label-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.story-project-orange-square {
+  color: #f5b041;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.story-project-label-text {
+  font-size: 21px;
+  font-weight: 300;
+  font-family: "Futura", sans-serif;
+  color: #252661;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.story-project-label-text::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: #656565;
+}
+
+.story-project-feature-section-title-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+}
+
+.story-project-section-title {
+  font-size: clamp(32px, 4vw, 50px);
+  font-weight: 200;
+  color: #000;
+  font-family: "Futura", sans-serif;
+  margin: 0 !important;
+  line-height: 1.1;
+}
+
+.story-project-section-desc-wrk {
+  color: #656565;
+  max-width: 400px;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: 'Hanken Grotesk', sans-serif !important;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* =========================================
+   Sticky Cards Setup
+========================================= */
+.story-project-works-grid {
+  position: relative;
+  width: 100%;
+}
+
+.story-project-card-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.story-project-work-card {
+  position: sticky;
+  top: 180px; 
+  border-radius: 16px;
+  overflow: hidden;
+  height: 600px; 
+  background: #fff;
+}
+
+.story-project-work-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================================
+   Card Overlay & Content 
+========================================= */
+.story-project-overlay {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  width: calc(100% - 48px); 
+  max-width: 850px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 20px 24px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  box-sizing: border-box; 
+}
+
+.story-project-project-info {
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.story-project-title-row-icon {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.story-project-project-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.story-project-project-title {
+  color: #fff;
+  font-size: 24px;
+  font-family: "Futura", sans-serif;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.story-project-tags {
+  display: flex;
+  flex-direction:row !important;
+  gap: 4px;
+  margin-left: 36px; 
+}
+
+.story-project-tag {
+  background: #fff;
+  color: #434040;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.story-project-client-project-btn {
+  display: flex;
+  align-items: stretch;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0; 
+}
+
+.story-project-client-project-btn .story-project-featured-text {
+  background-color: #f5b041;
+  color: #111;
+  padding: 6px 12px;
+  font-family: "Futura", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 8px 8px 8px 8px; 
+}
+
+.story-project-client-project-btn .story-project-featured-arrow-box {
+  background-color: #e49f33; 
+  color: #111;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px 8px 8px 8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.story-project-linkss{
+  text-decoration:none;
+}
+
+
+/* =========================================
+   RESPONSIVE BREAKPOINTS 
+========================================= */
+
+@media (min-width: 1200px) {
+  .story-project-featured-sections {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .story-project-work-header {
+    max-width: 1400px;
+    margin: 0 auto 40px auto;
+    padding: 0 40px;
+    padding-top:80px;
+    display:flex;
+    justify-content:space-between;
+  }
+  .story-project-work-card {
+    width: 100%; 
+    height: 100vh; 
+    border-radius: 0; 
+    top: 0; 
+  }
+  .story-project-overlay {
+    bottom: 50px;
+    left: 50px;
+    max-width: 900px;
+  }
+}
+
+@media(max-width:1200px){
+  .story-project-work-header{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    padding-top:80px;
+  }
+}
+
+/* 2. Tablets & Small Desktops */
+@media (max-width: 992px) {
+  /* 👇 Team section-ல் உள்ள அதே delay/sync trick 👇 */
+  .story-project-featured-sections { 
+    padding: 0px 20px 50px 20px; 
+    --sync-extend: 70vh;
+    --visual-gap: 50px;
+    overflow: visible !important;
+  }
+
+  .story-project-work-header {
+    position: sticky !important;
+    top: 70px !important; 
+    z-index: 100 !important;
+    background: #fff !important; 
+    padding-top: 40px !important;
+    padding-bottom: 20px !important;
+    
+    /* Header-ஐ இழுத்து பிடிக்க margin-bottom */
+    margin-bottom: var(--sync-extend) !important;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .story-project-feature-section-title-div { flex-direction: column; align-items: center; gap: 16px; }
+  .story-project-section-desc-wrk { max-width: 100%; text-align:center; padding-top:15px; display:flex; justify-content:center; }
+  .story-project-label-row { justify-content:center; }
+  .story-project-section-title { align-items:center; display:flex; justify-content:center; }
+
+  .story-project-works-grid {
+    height: auto !important; 
+    display: flex;
+    flex-direction: column;
+    gap: var(--visual-gap) !important; 
+    
+    /* Cards-ஐ மேல கொண்டு வந்து sync-extend space-ஐ fill செய்ய margin-top */
+    margin-top: calc( -1 * (var(--sync-extend) - var(--visual-gap)) ) !important;
+    padding-bottom: 50px;
+  }
+  
+  .story-project-card-wrapper {
+    position: sticky !important; 
+    height: auto !important;     
+    top: 260px !important;  
+  }
+  
+  /* Overlapping Z-index */
+  .story-project-card-wrapper:nth-child(1) { z-index: 10 !important; }
+  .story-project-card-wrapper:nth-child(2) { z-index: 20 !important; }
+  .story-project-card-wrapper:nth-child(3) { z-index: 30 !important; }
+  .story-project-card-wrapper:nth-child(4) { z-index: 40 !important; }
+  .story-project-card-wrapper:nth-child(5) { z-index: 50 !important; }
+  .story-project-card-wrapper:nth-child(6) { z-index: 60 !important; }
+
+  .story-project-work-card {
+    position: relative !important;
+    top: 0 !important;
+    height: calc(100vh - 280px) !important; 
+    min-height: 400px;
+    
+  }
+  
+  .story-project-overlay { max-width: 100%; }
+}
+
+/* 3. Mobile Devices (Phones & Small Tablets) */
+@media (max-width: 768px) {
+  .story-project-featured-sections { 
+    padding: 0px 16px 40px 16px; 
+    --sync-extend: 70vh; /* Mobile-க்கு தகுந்த Sync Length */
+    --visual-gap: 40px;
+  }
+  
+  .story-project-work-header {
+    top: 60px !important;
+    padding-top: 30px !important;
+  }
+
+  .story-project-card-wrapper {
+    top: 230px !important; 
+  }
+
+  .story-project-work-card { 
+    height: calc(100vh - 250px) !important;
+  }
+
+  .story-project-overlay {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    padding: 15px 10px;
+    gap: 16px;
+  }
+  
+  .story-project-project-info { align-items: center; justify-content: space-between ;width:100% !important }
+  .story-project-title-row-icon { justify-content: flex-start; text-align:center; }
+  .story-project-tags { margin-left: 0; flex-wrap: wrap; justify-content: center; display:flex; flex-direction:row !important; }
+  
+  .story-project-client-project-btn { width: 100%; max-width: 320px; justify-content: center; }
+  .story-project-client-project-btn .story-project-featured-text { flex-grow: 1; text-align: center; border-radius: 9px; display:flex; align-items:center; justify-content:center; margin-right: 0; }
+  .story-project-client-project-btn .story-project-featured-arrow-box { border-radius:9px; }
+}
+
+/* 4. Very Small Phones */
+@media (max-width: 480px) {
+  .story-project-featured-sections {
+    padding-top:140px;
+    --sync-extend: 64vh;
+    --visual-gap: 30px;
+  }
+
+  .story-project-section-title { font-size: 26px; }
+  .story-project-project-icon { width: 18px; height: 18px; }
+  .story-project-project-title { font-size: 18px; }
+  .story-project-tag { font-size: 9px; padding: 4px 10px; }
+  
+  .story-project-client-project-btn .story-project-featured-text { font-size: 11px; min-width:100px; padding: 6px 12px; }
+  .story-project-client-project-btn .story-project-featured-arrow-box { padding: 6px 12px; font-size: 14px; }
+
+  .story-project-work-header {
+    top: 90px !important;
+  }
+  
+  .story-project-card-wrapper {
+    top: 310px !important; 
+    
+  }
+  
+  .story-project-work-card { 
+    height: calc(80vh - 230px) !important;
+  }
+}

@@ -1,0 +1,714 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+font-family: "Futura";
+src: url("../../../NewFonts/Futura Now Headline.woff2") format("woff2");
+font-weight: 400;
+}
+@font-face {
+font-family: "Futura";
+src: url("../../../NewFonts/Futura Now Headline.woff2") format("woff2");
+font-weight: 700;
+}
+
+/* =========================
+Base Section
+========================= */
+.voc-section {
+width: 100%;
+max-width: 1440px;
+margin: 0 auto;
+padding: 3  0px 20px;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+background-color: #ffffff;
+overflow: hidden;
+box-sizing: border-box;
+}
+
+/* =========================
+Header
+========================= */
+.voc-header {
+display: flex;
+justify-content:space-around;
+align-items: center;
+margin-bottom: 60px;
+gap: 20px;
+}
+
+.voc-header-left {
+display: flex;
+align-items: center;
+width:280px;
+}
+
+.voc-badge {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+position: relative;
+left: 0;
+}
+
+.voc-orange-square {
+width: 8px;
+height: 8px;
+background-color: #F8B946;
+display: inline-block;
+position: relative;
+bottom: 4px;
+}
+
+.voc-badge-text {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+color: #262561;
+font-family: "Futura", sans-serif;
+font-size: 21px;
+font-weight: 400;
+text-transform: capitalize;
+margin-bottom: 10px;
+position: relative;
+}
+
+.voc-badge-text::after {
+content: "";
+position: absolute;
+bottom: -8px;
+left: 30px;
+width: 70%;
+height: 1px;
+background-color: #000;
+}
+
+.voc-header-center {
+text-align: center;
+}
+
+.voc-title {
+font-size: clamp(22px, 4vw, 55px);
+font-weight: 400;
+color: #000;
+font-family: "Futura", sans-serif;
+line-height: 1.2;
+letter-spacing: -1.5px;
+position: relative;
+width: 100%;
+}
+
+.voc-header-right {
+display: flex;
+flex-direction: column;
+
+width: 280px;
+}
+
+.voc-subtitle {
+font-size: 13px;
+font-family: 'Hanken Grotesk', sans-serif !important;
+line-height: 1.6;
+color: #56565a;
+margin-bottom: 35px;
+max-width: 440px;
+min-width:300px;
+width: 100%;
+}
+
+.voc-nav-buttons {
+display: flex;
+gap: 12px;
+justify-content: flex-end;
+}
+
+.voc-arrow-btn {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background-color: #000;
+color: #fff;
+border: none;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+position: relative;
+
+transition: opacity 0.2s;
+}
+
+.voc-arrow-btn:hover {
+opacity: 0.8;
+}
+
+.voc-arrow-btn:disabled {
+opacity: 0.3;
+cursor: not-allowed;
+}
+
+/* =========================
+Swiper & Slides
+========================= */
+.voc-slider-container {
+width: 100%;
+overflow: visible;
+}
+
+.voc-swiper {
+padding-bottom: 20px;
+overflow: visible !important;
+position: relative;
+bottom: 30px;
+}
+
+.voc-slide {
+  width: 500px; /* Reduced from 700px. Adjust this value if you want it slightly bigger/smaller */
+  max-width: 100%;
+  transition: all 0.4s ease;
+}
+
+.voc-card {
+opacity: 0.4;
+transition: opacity 0.4s ease;
+background: #f1f0ee;
+border-radius: 16px;
+padding: 16px;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+width: 100%;
+box-sizing: border-box;
+}
+
+.voc-card.is-active {
+opacity: 1;
+}
+
+.voc-image-wrapper {
+position: relative;
+width: 100%;
+border-radius: 12px;
+overflow: hidden;
+background-color: #f5f5f5;
+aspect-ratio: 17 / 11;
+}
+
+.voc-main-img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+
+/* =========================================================
+   1. DESKTOP (1440px – 1919px) & BASE OVERLAY STYLES
+   Exact Glass Effect from Second Image
+   ========================================================= */
+.voc-glass-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+
+  width: 75%; /* Increased percentage so it fills the smaller card nicely */
+  max-width: 400px; /* Reduced max-width */
+  padding: 24px; /* Reduced padding from 40px */
+  box-sizing: border-box;
+  text-align: left;
+  color: #ffffff;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.4s ease 0.2s;
+}
+
+.voc-card.is-active .voc-glass-overlay {
+opacity: 1;
+}
+
+.voc-glass-title {
+  font-size: 22px; /* Reduced from 28px */
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 12px 0; /* Reduced margin */
+  font-family: 'Inter', sans-serif;
+}
+
+.voc-glass-text {
+  font-size: 14px; /* Reduced from 16px */
+  line-height: 1.5;
+  margin: 0 0 16px 0; /* Reduced margin */
+  opacity: 0.95;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.voc-author-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.voc-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.voc-author-info {
+display: flex;
+flex-direction: column;
+}
+
+.voc-author-name {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+}
+
+.voc-author-role {
+  font-size: 13px;
+  opacity: 0.8;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Bottom Meta */
+.voc-card-meta {
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
+margin-top: 16px;
+padding: 0 4px;
+gap: 12px;
+}
+
+.voc-meta-left {
+display: flex;
+flex-direction: column;
+gap: 4px;
+}
+
+.voc-item-title {
+font-size: 16px;
+font-family: 'Inter', sans-serif;
+font-weight: 600;
+color: #131313;
+margin: 0;
+}
+
+.voc-item-year {
+font-size: 13px;
+color: #757575;
+}
+
+.voc-meta-right {
+display: flex;
+gap: 8px;
+flex-wrap: wrap;
+}
+
+.voc-tag {
+font-size: 11px;
+font-family: 'Inter', sans-serif;
+letter-spacing: 0.2px;
+font-weight: 500;
+color: #757575;
+padding: 4px 12px;
+border-radius: 20px;
+border: 1px solid #afab9f;
+background-color: transparent;
+}
+
+/* =========================================================
+   2. LAPTOP (1200px – 1439px)
+   ========================================================= */
+@media (max-width: 1439px) and (min-width: 1200px) {
+  .voc-glass-overlay {
+    width: 62%;
+    padding: 36px;
+  }
+  .voc-glass-title { font-size: 22px; margin-bottom: 14px; }
+  .voc-glass-text { font-size: 15px; margin-bottom: 20px; }
+  .voc-avatar { width: 38px; height: 38px; }
+}
+
+/* =========================================================
+   3. SMALL LAPTOP (992px – 1199px)
+   ========================================================= */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .voc-glass-overlay {
+    width: 70%;
+    padding: 32px;
+  }
+  .voc-glass-title { font-size: 22px; margin-bottom: 12px; }
+  .voc-glass-text { font-size: 14px; margin-bottom: 18px; }
+  .voc-avatar { width: 36px; height: 36px; }
+  .voc-author-name { font-size: 14px; }
+  .voc-author-role { font-size: 12px; }
+}
+
+/* =========================================================
+   4. TABLET (768px – 991px)
+   ========================================================= */
+@media (max-width: 991px) and (min-width: 768px) {
+  .voc-glass-overlay {
+    width: 78%;
+    padding: 28px;
+    border-radius: 10px;
+  }
+
+  .voc-badge {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+position: relative;
+}
+
+.voc-orange-square {
+width: 8px;
+height: 8px;
+background-color: #F8B946;
+display: inline-block;
+position: relative;
+bottom: 4px;
+}
+/* Update this in your CSS file */
+
+.voc-card {
+  opacity: 0.4;
+  /* Card opacity maarurathuku mattum transition vechukalam */
+  transition: opacity 1s ease; 
+  background: #f1f0ee;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  width: 100%;
+  box-sizing: border-box;
+}
+.voc-badge-text {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+color: #262561;
+font-family: "Futura", sans-serif;
+font-size: 14px;
+font-weight: 400;
+text-transform: capitalize;
+margin-bottom: 25px;
+position: relative;
+}
+
+
+
+  .voc-title {
+    font-size: clamp(22px, 6vw, 35px);
+    margin-bottom: 10px;
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+  }
+
+  .voc-subtitle {
+    font-size: 12px;
+    position: relative;
+    bottom: 2px;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+
+  .voc-nav-buttons {
+    justify-content: center;
+    position: relative;
+    bottom: 30px;
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+  }
+
+  .voc-glass-title { font-size: 22px; margin-bottom: 10px; }
+  .voc-glass-text { font-size: 14px; line-height: 1.5; margin-bottom: 16px; }
+  .voc-author-block { gap: 10px; }
+  .voc-avatar { width: 34px; height: 34px; }
+}
+
+@media(max-width:768px){
+  .voc-orange-square {
+width: 8px;
+height: 8px;
+background-color: #F8B946;
+display: inline-block;
+position: relative;
+top: -7px !important;
+}
+}
+
+/* =========================================================
+   5. LARGE MOBILE (481px – 767px)
+   ========================================================= */
+@media (max-width: 767px) and (min-width: 481px) {
+  .voc-glass-overlay {
+    width: 85%;
+    padding: 24px 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .voc-nav-buttons{
+    display:none !important;
+  }
+
+   .voc-header {
+    display:flex;
+    flex-direction:column;
+    margin-bottom: 20px;
+    justify-content:center;
+    gap: 5px;
+  }
+
+  .voc-header-left,
+  .voc-header-center,
+  .voc-header-right {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .voc-title {
+    font-size: clamp(22px, 6vw, 30px);
+    margin-bottom: 10px;
+    bottom: 0;
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+  }
+
+  .voc-subtitle {
+    font-size: 11px;
+    position: relative;
+    bottom: 20px;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .voc-nav-buttons {
+    justify-content: center;
+    position: relative;
+    bottom: 30px;
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+  }
+
+  .voc-glass-title { font-size: 18px; margin-bottom: 8px; }
+  .voc-glass-text { font-size: 13px; line-height: 1.5; margin-bottom: 14px; }
+
+  .voc-author-block {
+    justify-content: center;
+    gap: 8px;
+  }
+  .voc-avatar { width: 30px; height: 30px; }
+  .voc-author-name { font-size: 13px; }
+  .voc-author-role { font-size: 11px; }
+
+
+
+}
+
+/* =========================================================
+   6. MOBILE (<=600px & 375px–480px)
+   Includes Your Exact Layout Logic + Glass Overlay Fix
+   ========================================================= */
+@media (max-width: 600px) {
+  .voc-section {
+    padding: 16px 12px;
+  }
+
+   .voc-header {
+    display:flex;
+    flex-direction:column;
+    margin-bottom: 20px;
+    justify-content:center;
+  }
+  .voc-badge-text{
+    font-size: 16px;
+  }
+  
+
+  .voc-header-left,
+  .voc-header-center,
+  .voc-header-right {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .voc-badge {
+    left: 0;
+    justify-content: center;
+  }
+
+  .voc-badge-text::after {
+    left: 0;
+    width: 100%;
+  }
+
+  .voc-title {
+    margin-bottom: 12px;
+    bottom: 0;
+    font-size: clamp(24px, 6vw, 35px);
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+    left: 10px;
+  }
+
+  .voc-subtitle {
+    font-size: clamp(11px, 3.2vw, 13px);
+    position: relative;
+    bottom: 20px;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .voc-nav-buttons {
+    justify-content: center;
+    position: relative;
+    bottom: 30px;
+    margin-top: 8px;
+    display: none;
+    gap: 8px;
+  }
+
+  .voc-arrow-btn {
+    left: 0;
+  }
+
+  .voc-slide {
+    width: 94%;
+  }
+
+  .voc-glass-overlay {
+    width: 88%;
+    max-width: 92%;
+    padding: 18px 14px;
+    border-radius: 10px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .voc-glass-title {
+    font-size: clamp(14px, 4vw, 16px);
+    line-height: 1.35;
+    margin: 0 0 6px 0;
+  }
+
+  .voc-glass-text {
+    font-size: clamp(11px, 3.2vw, 13px);
+    line-height: 1.45;
+    margin: 0 0 10px 0;
+  }
+
+  .voc-author-block {
+    gap: 6px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+  }
+
+  .voc-avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .voc-author-name {
+    font-size: clamp(11px, 3.2vw, 13px);
+  }
+
+  .voc-author-role {
+    font-size: clamp(9px, 2.6vw, 11px);
+  }
+
+  .voc-card { padding: 8px; }
+  .voc-image-wrapper { border-radius: 8px; }
+  .voc-item-title { font-size: clamp(12px, 3.4vw, 14px); }
+  .voc-item-year { font-size: clamp(10px, 2.8vw, 12px); }
+  .voc-tag { font-size: clamp(8px, 2.4vw, 10px); padding: 2px 6px; }
+}
+
+/* =========================================================
+   7. VERY SMALL MOBILE (320px – 374px)
+   Your Logic Intact + Perfectly Scaled Overlay
+   ========================================================= */
+@media (max-width: 374px) {
+  .voc-section {
+    padding: 0px 10px;
+  }
+
+  .voc-title {
+    font-size: clamp(22px, 6vw, 25px);
+    margin-bottom: 10px;
+    bottom: 0;
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+  }
+
+  .voc-subtitle {
+    font-size: 11px;
+    position: relative;
+    bottom: 20px;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .voc-nav-buttons {
+    justify-content: center;
+    position: relative;
+    bottom: 30px;
+    margin-top: 8px;
+    display: none;
+    gap: 8px;
+  }
+
+  .voc-slide {
+    width: 96%;
+  }
+
+  .voc-glass-overlay {
+    width: 92%;
+    padding: 14px 10px;
+    border-radius: 8px;
+  }
+
+  .voc-glass-title {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .voc-glass-text {
+    font-size: 10.5px;
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+
+  .voc-item-title { font-size: 12px; }
+  .voc-author-name { font-size: 10px; }
+  .voc-author-role { font-size: 8px; }
+  .voc-avatar { width: 24px; height: 24px; }
+}

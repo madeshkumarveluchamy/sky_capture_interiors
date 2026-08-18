@@ -1,0 +1,607 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap');
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(16px, 2vw, 32px) clamp(16px, 5vw, 60px);
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  /* Background Smooth Transition */
+  transition: background-image 1s ease-in-out;
+}
+
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Filter Effects */
+  filter: brightness(1.15) contrast(1.05);
+  
+  /* Smooth Fade Magic நடக்கும் இடம் */
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out; 
+  z-index: -1; /* Content-க்கு பின்னால் இருக்க வேண்டும் */
+}
+
+/* Active ஆக உள்ள Image மட்டும் தெரிய வேண்டும் */
+.hero-bg.active {
+  opacity: 1;
+}
+/* =========================================
+   Smooth Fade & Slide Animation for Text
+   ========================================= */
+
+@keyframes smoothTextFade {
+  0% {
+    opacity: 0;
+    transform: translateY(15px); /* லேசாக கீழே இருந்து... */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* ...மேலே வந்து நிற்கும் */
+  }
+}
+
+/* Heading-க்கு Animation சேர்க்கிறோம் */
+.hero-title {
+  animation: smoothTextFade 0.8s ease-out forwards;
+}
+
+/* Description-க்கு Animation சேர்க்கிறோம் (சற்று தாமதமாக வர delay சேர்க்கப்பட்டுள்ளது) */
+.hero-description {
+  animation: smoothTextFade 0.8s ease-out 0.2s forwards;
+  opacity: 0; /* Animation தொடங்கும் முன் text மறைந்திருக்க வேண்டும் */
+}
+
+/* Thumbnail Image-க்கும் அதே Smooth Effect வர */
+.thumb-fade {
+  animation: smoothTextFade 0.8s ease-out forwards;
+}
+
+
+
+.main-content {
+  display: flex;
+  position: relative;
+  z-index: 5;
+  flex-grow: 1;
+  gap: 20px;
+  align-items: flex-start;
+  padding-top: clamp(10px, 2vw, 30px);
+}
+
+.left-indicator-bar {
+  width: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-right: 10px;
+  padding-top: 80px;
+  flex-shrink: 0;
+  position: relative;
+  top: 15px;
+}
+
+.indicator-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  position: relative;
+  /* இரண்டுக்கும் பொதுவான Border */
+  border: 2px solid #fcb037; 
+  /* நிறம் மட்டும் ஸ்மூத்தாக மாற Transition */
+  transition: background-color 0.3s ease; 
+}
+
+/* மேலேயும் கீழேயும் இருக்கும் இடத்திற்கான அளவு */
+.top-dot {
+  top: 19px;
+}
+
+.bottom-dot {
+  bottom: 19px;
+}
+
+/* Solid (Yellow) ஆக இருக்கும் போது */
+.filled {
+  background-color: #fcb037;
+}
+
+/* Hollow (வெறுமனே பார்டர் மட்டும்) ஆக இருக்கும் போது */
+.hollow {
+  background-color: transparent;
+}
+
+.orange-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #fcb037;
+  flex-shrink: 0;
+  position: relative;
+  top: 19px;
+}
+
+.vertical-line {
+  width: 1px;
+  height: clamp(275px, 35vh, 420px);
+  background: rgb(214, 213, 213);
+}
+
+.hollow-square {
+  width: 8px;
+  height: 8px;
+  border: 2px solid #fcb037;
+  position: relative;
+  bottom: 19px;
+}
+
+.text-section {
+  max-width: 520px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: clamp(10px, 2vw, 30px);
+  position: relative;
+  top: 80px;
+}
+
+.hero-title {
+  font-size: clamp(22px, 5vw, 50px);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+  margin: 0;
+}
+
+.hero-description {
+  font-size: clamp(8px, 1.1vw, 15px);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 300;
+  margin: 0;
+  max-width: 73%;
+}
+
+.thumbnail-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 7px;
+  border-radius: 10px;
+  width: min(140%, 180px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.thumb-img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.thumb-title {
+  font-size: 11px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+}
+
+.thumbnail-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  padding: 0 4px;
+  gap: 10px;
+}
+
+.thumb-arrow {
+  color: #ffffff;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.action-row {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  margin-top: auto;
+  padding-top: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.plus-btn {
+  width: 42px;
+  height: 42px;
+  background-color: #ffffff;
+  color: #a18568;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  font-weight: 100;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.plus-btn:hover {
+  transform: scale(1.05);
+}
+
+.book-call-btn {
+  background-color: rgba(184, 151, 121, 0.7);
+  backdrop-filter: blur(5px);
+  color: #ffffff;
+  padding: 15px 22px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 200;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.watermark-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+ 
+}
+
+@media (min-width: 1800px) {
+  .huge-watermark {
+  position: absolute;
+  right: 50px;
+  bottom: 24px;
+  height:380px;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(120px, 17vw, 360px);
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  letter-spacing: -10px;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 1;
+  text-shadow: 2px 4px  10px rgba(0, 0, 0, 0.35),
+               0px 15px 40px rgba(0, 0, 0, 0.25),
+               0px 30px 60px rgba(0, 0, 0, 0.15);
+  user-select: none;
+  white-space: nowrap;
+  
+  /* பழைய animation நீக்கப்பட்டு, புதிய Flex லேஅவுட் சேர்க்கப்பட்டுள்ளது */
+  display: flex;
+  overflow: hidden; /* எழுத்துக்கள் கோட்டிற்கு கீழே இருந்து வருவது போல் காட்ட */
+}
+
+}
+
+@media (max-width: 1800px) {
+
+.huge-watermark {
+  position: absolute;
+  right: 50px;
+  bottom: 24px;
+  height:280px;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(120px, 17vw, 360px);
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  letter-spacing: -10px;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 1;
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.35),
+               0px 15px 40px rgba(0, 0, 0, 0.25),
+               0px 30px 60px rgba(0, 0, 0, 0.15);
+  user-select: none;
+  white-space: nowrap;
+  
+  /* பழைய animation நீக்கப்பட்டு, புதிய Flex லேஅவுட் சேர்க்கப்பட்டுள்ளது */
+  display: flex;
+  overflow: hidden; /* எழுத்துக்கள் கோட்டிற்கு கீழே இருந்து வருவது போல் காட்ட */
+}
+
+}
+
+.reveal-letter {
+  display: inline-block;
+  transform: translateY(120%); /* ஆரம்பத்தில் கீழே மறைந்திருக்கும் */
+  opacity: 0;
+  /* வீடியோவில் உள்ளது போன்ற மென்மையான (Smooth) எஃபெக்ட் */
+  animation: letterSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
+@keyframes letterSlideUp {
+  0% {
+    transform: translateY(120%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* Background ஸ்மூத்தாக மாறுவதற்காக */
+.hero-container {
+  transition: background-image 1s ease-in-out;
+}
+
+/* Thumbnail மாறும் போது ஸ்மூத்தாக fade-in ஆவதற்காக */
+@keyframes thumbFadeIn {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.thumb-fade {
+  animation: thumbFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@media (max-width: 1024px) {
+  .hero-container {
+    padding: 24px 24px 32px 24px;
+  }
+
+  .main-content {
+    gap: 16px;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+  .left-indicator-bar {
+    width: 30px;
+    margin-right: 0;
+    padding-top: 20px;
+    bottom: 0;
+  }
+
+  .vertical-line {
+    height: clamp(220px, 28vh, 320px);
+  }
+  .huge-watermark{
+    height:180px;
+  }
+
+  .text-section {
+    top: 0;
+    padding-top: 0;
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: clamp(24px, 4vw, 34px);
+  }
+
+  .hero-description {
+    max-width: 85%;
+  }
+
+  .thumbnail-card {
+    width: 180px;
+  }
+
+  .book-call-btn {
+    position: static;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-container {
+    min-height: 90vh;
+    padding: 18px 16px 24px 16px;
+    justify-content: center;
+  }
+
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  .left-indicator-bar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-right: 0;
+    padding-top: 0;
+    position: static;
+  }
+
+  .orange-dot {
+    position: static;
+  }
+
+  .indicator-dot {
+    position: static;
+  }
+
+  .hollow-square {
+    position: static;
+  }
+
+  .vertical-line {
+    width: 50px;
+    height: 1px;
+  }
+
+  .text-section {
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    gap: 12px;
+    top: -10px;
+  }
+
+  .hero-title {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 15px;
+    max-width: 92%;
+    margin: 0 auto;
+  }
+
+  .thumbnail-card {
+    width: min(100%, 220px);
+    margin: 0 auto;
+  }
+
+  .thumb-img {
+    height: 120px;
+  }
+
+  .thumbnail-footer {
+    justify-content: center;
+  }
+
+  .action-row {
+    justify-content: center;
+    width: 100%;
+    margin-top: 18px;
+    margin-bottom: 0;
+    gap: 0px;
+    position: relative;
+    bottom: 30px;
+    right: 20px;
+  }
+
+  .book-call-btn {
+    position: static;
+    font-size: 12px;
+    padding: 14px 20px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .huge-watermark {
+    height:120px;
+    right: 50%;
+    bottom: 20px;
+    transform: translateX(50%);
+    font-size: clamp(56px, 20vw, 110px);
+    letter-spacing: -3px;
+    text-align: center;
+    position: absolute;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    padding: 14px 12px 20px 12px;
+  }
+
+  .main-content {
+    gap: 16px;
+  }
+
+  .left-indicator-bar {
+    gap: 8px;
+  }
+
+  .vertical-line {
+    width: 35px;
+  }
+
+  .hero-title {
+    font-size: 22px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .thumbnail-card {
+    width: 100%;
+    max-width: 210px;
+    position: static;
+  }
+
+  .thumb-img {
+    height: 100px;
+  }
+
+  .thumb-title {
+    font-size: 10px;
+  }
+
+  .book-call-btn {
+    width: 90%;
+    max-width: 130px;
+  }
+
+  .huge-watermark {
+    font-size: clamp(48px, 22vw, 90px);
+    bottom: 5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plus-btn,
+  .huge-watermark,
+  .fade-animation {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* Option 2: Slide Up Fade */
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.thumb-fade {
+  animation: slideUpFade 0.6s ease-out forwards;
+}

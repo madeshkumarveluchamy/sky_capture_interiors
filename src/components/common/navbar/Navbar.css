@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: "Futura";
+  src: url("../../../NewFonts/Futura Now Headline.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("../../../NewFonts/Futura Now Headline.woff2") format("woff2");
+  font-weight: 700;
+}
+
+/* --- Main Navbar Header --- */
+.navbar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 4%; 
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  font-family: "Futura", sans-serif;
+  gap: 15px; 
+}
+
+/* --- Left Side Wrapper (Logo Header) --- */
+.nav-mobile-header {
+  flex: 1; 
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* --- Logo Box --- */
+.nav-logo-box {
+  background-color: #ffffff;
+
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
+}
+
+.nav-logo-box img {
+  height: 60px; 
+  object-fit: contain;
+  display: block;
+}
+
+/* --- Hamburger Icon (Hidden on Desktop) --- */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: auto;
+}
+
+.nav-hamburger .bar {
+  width: 22px;
+  height: 2.5px;
+  background-color: #222222;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* --- Navigation Links Pill --- */
+.nav-links-container {
+  background-color: #ffffff;
+  padding: 18px 45px; 
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #1e1d1d; 
+  font-weight: 400;
+  font-family: "Futura", sans-serif;
+  font-size: 14px; 
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #f5b041; 
+}
+
+/* --- Right Side Yellow Split Button --- */
+.nav-project-btn-group {
+  flex: 1; 
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0px; 
+  position: relative;
+  top: 1px;
+  flex-wrap: nowrap; /* 🛠️ FIX: Prevents button from breaking into two lines */
+}
+
+.btn-text-part {
+  background-color: #FCB037;
+  color: #111111;
+  border: none;
+  padding: 6px 24px; 
+  border-radius: 8px;
+  cursor: pointer;
+
+  font-size: 17px;
+  font-weight: 500;
+  font-family: 'futura', sans-serif;
+  transition: background-color 0.3s ease;
+  white-space: nowrap; /* 🛠️ FIX: Prevents text from shrinking to a new line */
+}
+
+.btn-arrow-part {
+  background-color: #FCB037;
+  color: #111111;
+  border: none;
+  padding: 6px 12px; 
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn-text-part:hover,
+.btn-arrow-part:hover {
+  background-color: #e5930e;
+}
+
+/* By default, hide the mobile button copy */
+.mobile-only-btn {
+  display: none !important;
+}
+
+
+
+/* ==========================================
+   🎯 RESPONSIVE MEDIA QUERIES
+   ========================================== */
+
+/* --- Tablet View --- */
+@media (max-width: 1024px) {
+  .nav-links-container {
+    padding: 16px 25px;
+    gap: 20px;
+  }
+  .nav-link {
+    font-size: 13px;
+  }
+  .nav-logo-box img {
+    height: 50px;
+  }
+}
+
+/* --- Mobile View (Breakpoint at 800px) --- */
+@media (max-width: 800px) {
+  .navbar-wrapper {
+    flex-direction: column;
+    padding: 18px !important; 
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .nav-mobile-header {
+    width: 100% !important;
+    background-color: #ffffff;
+    padding: 5px 10px !important; 
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  .nav-logo-box {
+    padding: 0 !important;
+    box-shadow: none !important; 
+    background-color: transparent;
+  }
+
+  .nav-logo-box img {
+    height: 65px; 
+  }
+
+  /* Show Hamburger on Mobile */
+  .nav-hamburger {
+    display: flex !important;
+  }
+
+  /* Hamburger Click Animations */
+  .nav-hamburger .bar.active:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+  }
+  .nav-hamburger .bar.active:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-hamburger .bar.active:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+  }
+
+  /* --- DROPDOWN MENU --- */
+  .nav-links-container {
+    display: none; 
+    flex-direction: column;
+    width: 100% !important;
+    height: 75vh; 
+    background-color: #ffffff;
+    padding: 20px 0 !important;
+    gap: 35px; 
+    border-radius: 10px; 
+    justify-content: center; 
+    align-items: center; 
+  }
+
+  /* Show links when toggled */
+  .nav-links-container.show-menu {
+    display: flex !important;
+    animation: fadeInDown 0.3s ease-in-out;
+  }
+
+  /* --- UPDATED FONT SIZE --- */
+  .nav-link {
+    font-size: 25px; 
+    font-weight: 500;
+  }
+
+  /* --- Toggle Desktop and Mobile Buttons --- */
+  .desktop-only-btn {
+    display: none !important;
+  }
+  
+  .mobile-only-btn {
+    display: flex !important;
+    justify-content: center;
+    margin-top: 15px; 
+  }
+}
+
+/* Dropdown Animation */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   🎯 SOCIAL ICONS STYLING (MOBILE ONLY)
+   ========================================== */
+
+/* Hide icons on Desktop & Tablet view by default */
+.mobile-social-icons {
+  display: none; 
+}
+
+/* --- Mobile View Styling (Breakpoint at 800px) --- */
+@media (max-width: 800px) {
+  
+  .mobile-social-icons {
+    display: flex; 
+    gap: 20px;
+    margin-top: 10px; 
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .mobile-social-icons .social-icon {
+    width: 62px; 
+    height: 62px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-social-icons .social-icon:hover {
+    transform: translateY(-3px); 
+  }
+
+  .nav-project-btn-group {
+    display: none !important;
+  }
+}

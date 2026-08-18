@@ -1,0 +1,46 @@
+  <section className="studio-team-section">
+            <div className="studio-team-header-row">
+              <div className="studio-team-indicator">
+                <span className="studio-team-number inter-font">03</span>
+                <span className="studio-team-dash">—</span>
+                <span className="studio-team-text inter-font">TEAMS</span>
+              </div>
+              <h2 className="studio-team-main-title Futura-font">
+                Our Creative Team Behind
+                <br />
+                success
+              </h2>
+              <div className="studio-team-spacer"></div>
+            </div>
+
+            <div className="studio-team-grid">
+              {teamMembers.map((member, index) => (
+                <div key={index} className="studio-team-card">
+                  <div className="studio-team-image-box">
+                    <img src={member.img} alt={member.name} className="studio-team-img" />
+                    <div className="studio-team-social-panel">
+                      <a href={member.linkedin} className="studio-team-social-icon studio-team-ln" target="_blank" rel="noreferrer">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="#202A44">
+                          <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                        </svg>
+                      </a>
+                      <a href={member.instagram} className="studio-team-social-icon studio-team-ig" target="_blank" rel="noreferrer">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#202A44" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+                          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                      </a>
+                      <button className="studio-team-trigger-btn">
+                        <span className="studio-team-plus-symbol">+</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div className="studio-team-info">
+                    <h3 className="studio-team-name inter-font">{member.name}</h3>
+                    <p className="studio-team-role inter-font">{member.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>

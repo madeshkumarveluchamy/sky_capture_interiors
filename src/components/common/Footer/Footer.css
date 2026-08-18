@@ -1,0 +1,492 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: "Futura";
+  src: url("../../../NewFonts/Futura Now Headline.woff2") format("woff2");
+  font-weight: 400 !important;
+}
+
+
+@font-face {
+  font-family: "Futura";
+  src: url("../../../NewFonts/Futura Now Headline.woff2") format("woff2");
+  font-weight: 400 !important;
+}
+.footer-section { background-color: #6d6861; color: #ffffff; padding: 80px 10%; }
+.footer-wrapper { display: flex; justify-content: space-between; align-items: flex-start; max-width: 1400px; margin: 0 auto; }
+
+.footer-links { display: flex; flex-direction: column; gap: 15px; }
+.footer-links a { color: #fff; text-decoration: none; font-family: 'Futura', sans-serif; font-size: 30px; font-weight: 100 !important; }
+
+/* பொதுவான ஸ்டைல் - அனைத்து தலைப்புகளுக்கும் பொருந்தும் */
+.footer-center h4, .footer-right h4, .newsletter-box h4 { 
+    font-size: 14px; 
+    margin-bottom: 20px; 
+    border-bottom: 1px solid #fff; 
+    display: inline-block; 
+    padding-bottom: 5px; 
+    position: relative; 
+}
+.info-box{
+    position: relative;
+   
+}
+/* 1. Location தலைப்பு (footer-center உள்ளே உள்ளது) */
+.info-box h4 {
+    font-size: 20px; font-weight: 300; font-family: "Inter", sans-serif; position: relative;
+}
+
+/* 2. Studio Notes தலைப்பு (newsletter-box உள்ளே உள்ளது) */
+.newsletter-box h4 {
+     font-size: 20px;  font-family: "Inter", sans-serif; font-weight: 300; position: relative;}
+
+
+/* 3. Studio Updates தலைப்பு (footer-right உள்ளே உள்ளது) */
+.footer-right h4 {
+    font-size: 20px;  font-family: "Inter", sans-serif; font-weight: 300; position: relative;right: 10px;top: -14px;
+  }
+
+
+.footer-center p { margin: 8px 0; font-size: 14px;  font-family: "Futura", sans-serif;  line-height: 25px; position: relative;top: -20px; font-weight: 300;}
+
+.input-group { display: flex; margin-top: 15px;position: relative; bottom: -20px;}
+.input-group input { background: transparent; font-family: 'futura' ,sans-serif; font-weight: 100; font-size: 12px; border: 1px solid #d9d9d9; padding: 10px; width: 220px; color: #ffff; }
+.submit-btn{
+    display: inline-flex;
+    align-items: stretch;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    left: 240px;
+    bottom: 18px;
+}
+
+.contact-line {
+  margin: 8px 0;
+  font-size: 14px;
+  font-family: "Futura", sans-serif;
+}
+
+
+.phone-under,
+.mail-under {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.phone-under::after,
+.mail-under::after {
+  content: "";
+  position: absolute;
+  left: 50px;
+  bottom: 10px;
+  width: 65%;
+  height: 0.5px;
+  background: #fff;
+}
+
+
+.submit-btn .submit-text {
+    background-color: #f5b041;
+    color: #111;
+    font-size: 16px;
+  font-family: 'futura', sans-serif;
+    padding: 6px 30px;
+    font-weight: 600;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.submit-btn .submit-arrow-box {
+    background-color: #f5b041;
+    color: #111;
+    width: 35px; /* சிறிய பாக்ஸ் */
+    padding: 5px 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border-left: 1px solid rgba(0,0,0,0.1);
+    font-size: 16px;
+}
+.social-icons { display: flex; gap: 15px; position: relative;bottom: 10px;right: 20px; }
+.social-icon { width: 55px; height: 55px; cursor: pointer;  padding: 5px; border-radius: 26%; }
+
+.footer-brand h1 { font-size: 9.8vw;  font-family: "Futura", sans-serif;  font-weight: 400; letter-spacing:1px;color: #fff; margin: 0; margin-top: 50px;  line-height: 1; white-space: nowrap;position: relative;left: -9vw;top: 30px;}
+
+/* Footer Container */
+.footer-section { 
+  background-color: #6d6861; 
+  color: #ffffff; 
+  padding: 80px 10%; 
+  position: relative; /* இது மிகவும் முக்கியம் */
+  overflow: hidden;  
+  position: relative;
+  /* இமேஜ் பாக்ஸைத் தாண்டாமல் இருக்க */
+}
+
+/* பேக்ரவுண்ட் இமேஜ் டிசைன் */
+.footer-bg-design {
+  position: absolute; /* ஐகான் பாக்ஸிற்குள் டிசைனை வைக்க */
+  top: 60px;          /* ஐகான்களுக்கு ஏற்ப இதை மாற்றிக்கொள்ளலாம் */
+  right: -20px;       /* வலது பக்கம் அட்ஜஸ்ட் செய்ய */
+  width: 400px;       /* இமேஜ் அளவு */
+  height: auto;
+  z-index: 0;         /* ஐகான்களுக்குப் பின்னால் இருக்க */
+  pointer-events: none;
+         /* தேவைப்பட்டால் */
+}
+
+.footer-bg1-design {
+  position: absolute; /* ஐகான் பாக்ஸிற்குள் டிசைனை வைக்க */
+  bottom: 200px;          /* ஐகான்களுக்கு ஏற்ப இதை மாற்றிக்கொள்ளலாம் */
+  left: -5px;       /* வலது பக்கம் அட்ஜஸ்ட் செய்ய */
+  width: 400px;       /* இமேஜ் அளவு */
+  height: auto;
+  z-index: 0;         /* ஐகான்களுக்குப் பின்னால் இருக்க */
+  pointer-events: none;
+         /* தேவைப்பட்டால் */
+}
+
+
+/* மற்ற கன்டென்ட்கள் இமேஜிற்கு மேல் தெரிய */
+.footer-wrapper, .footer-brand {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1200px) {
+    .footer-section {
+        padding: 70px 6%;
+    }
+
+    .footer-wrapper {
+        gap: 30px;
+    }
+
+    .footer-brand h1 {
+        font-size: 9.5vw;
+        left: -4vw;;
+    }
+
+    .footer-bg-design {
+        width: 320px;
+        right: -10px;
+    }
+
+    .footer-bg1-design {
+        width: 320px;
+        bottom: 160px;
+    }
+
+    .footer-center p,
+    .info-box h4,
+    .newsletter-box h4,
+    .footer-right h4,
+    .input-group,
+    .submit-btn {
+        right: 0;
+        left: 0;
+    }
+
+    .submit-btn {
+        top: -25px;
+        left:240px;
+    }
+}
+
+@media (max-width: 992px) {
+    .footer-wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .footer-links {
+        width: 100%;
+        align-items: center;
+    }
+
+    .footer-links a {
+        font-size: 26px;
+        text-align: center;
+
+    }
+    .hello{
+        font-weight: 900 !important;
+    }
+
+    .footer-center,
+    .footer-right,
+    .newsletter-box {
+        width: 100%;
+        text-align: center;
+    }
+
+    .info-box h4,
+    .newsletter-box h4,
+    .footer-right h4,
+    .footer-center p,
+    .input-group,
+    .submit-btn {
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-center p {
+        max-width: 380px;
+    }
+
+    .input-group {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .submit-btn {
+        position: relative;
+        
+        top: -40px;
+        left:210px;
+    }
+
+    .social-icons {
+        justify-content: center;
+        right: 0;
+        bottom: 0;
+    }
+
+    .footer-brand h1 {
+        font-size:8.5vw;
+        text-align: center;
+        left: 8px;
+        top: 0;
+        white-space: normal;
+    }
+
+    .footer-bg-design,
+    .footer-bg1-design {
+        width: 220px;
+        opacity: 0.25;
+    }
+
+    .footer-bg-design {
+        right: -20px;
+        top: 30px;
+    }
+
+    .footer-bg1-design {
+        left: -20px;
+        bottom: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-section {
+        padding: 60px 16px;
+    }
+
+    .footer-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-links {
+        align-items: center;
+        gap: 18px;
+    }
+
+    .footer-links a {
+        font-size: 30px;
+        font-weight:900 !important;
+        
+    }
+
+    .footer-center,
+    .footer-right,
+    .newsletter-box {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-center h4,
+    .footer-right h4,
+    .newsletter-box h4,
+    .info-box h4 {
+        position: static;
+        right: 0;
+        top: 0;
+        text-align: center;
+        margin-bottom: 14px;
+    }
+
+    .footer-center p {
+        position: static;
+        font-size: 15px;
+        line-height: 1.6;
+        max-width: 320px;
+        text-align: center;
+    }
+
+    .input-group {
+        position: relative;
+        left:-65px;
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
+
+    .input-group input {
+        width: min(100%, 260px);
+        box-sizing: border-box;
+    }
+
+    .submit-btn {
+        position: relative;
+        margin-top: 10px;
+         top: -48px;
+        left:90px;
+    }
+
+    .social-icons {
+        position: static;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .footer-brand h1 {
+        font-size: 9vw;
+        text-align: center;
+        white-space: normal;
+        right: 0;
+        top: 0;
+        margin-top: 20px;
+    }
+
+    .footer-bg-design,
+    .footer-bg1-design {
+        width: 180px;
+        opacity: 0.18;
+    }
+
+    .footer-bg-design {
+        top: 20px;
+        right: -30px;
+    }
+
+    .footer-bg1-design {
+        left: -25px;
+        bottom: 80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-section {
+        padding: 50px 12px;
+    }
+
+    .footer-links a {
+        font-size: 32px;
+        font-weight:900 !important;
+    }
+
+    .footer-center p {
+        font-size: 14px;
+        max-width: 280px;
+    }
+
+    .input-group input {
+        width: 100%;
+        max-width: 240px;
+    }
+
+    .submit-btn .submit-text {
+        padding: 5px 25px;
+        font-size: 13px;
+    }
+
+    .submit-btn .submit-arrow-box {
+        width: 26px;
+        font-size: 19px;
+    }
+
+    .social-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .footer-brand h1 {
+        font-size: 10.5vw;
+        letter-spacing: -2px;
+        left:0px;
+    }
+
+    .footer-bg-design,
+    .footer-bg1-design {
+        width: 140px;
+    }
+}
+
+@media (max-width: 400px) {
+    .footer-section {
+        padding: 40px 10px;
+    }
+
+    .footer-links {
+        gap: 14px;
+    }
+
+    .footer-links a {
+        font-size: 29px;
+        font-weight:400 !important; 
+    }
+
+    .footer-center p {
+        font-size: 13px;
+        max-width: 240px;
+    }
+
+    .submit-btn .submit-text {
+        padding: 5px 25px;
+        font-size: 13px;
+    }
+
+    .submit-btn .submit-arrow-box {
+        width: 24px;
+        font-size: 14px;
+
+    }
+
+    .footer-brand h1 {
+        font-size: 10.5vw;
+        left:0px;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+
+    .social-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .footer-bg-design,
+    .footer-bg1-design {
+        display: none;
+    }
+}
