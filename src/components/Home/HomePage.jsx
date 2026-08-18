@@ -24,7 +24,7 @@ const HomePage = () => {
     <TeamSection/>
     <BlogSection/>
     <FAQSection/>
-  
+        {/* changes in the commetn line */}
     
     </div>
   )
