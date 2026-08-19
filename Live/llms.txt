@@ -1,0 +1,21 @@
+# Sky Kapture Interiors
+
+Sky Kapture Interiors is a premium interior design studio specializing in bespoke residential, commercial, renovation, and styling solutions that blend timeless aesthetics with modern functionality.
+
+## Core Features & Offerings
+- **Residential Design**: Custom space planning, layouts, and curated themes for luxury homes.
+- **Commercial Spaces**: Modern, highly functional commercial environments optimized for productivity and brand identity.
+- **Renovations & Remodeling**: Transforming existing spaces with updated layouts, finishes, and fixtures.
+- **Styling & Decor**: Professional curation of textures, premium finishes, artwork, and custom furnishings.
+
+## Site Structure (Routes)
+- **Home (`/`)**: Main landing page presenting current design philosophy, client testimonials ("Voices of Clients"), and featured projects.
+- **Projects (`/projects`)**: Portfolio showcase of completed and ongoing interior design works.
+- **Approach (`/approach`)**: Detailed overview of the design methodology, execution workflow, and project phases.
+- **Our Studio (`/our-studio`)**: Information about the brand story, team, mission, and studio culture.
+- **Insights (`/insights`)**: Blog articles, design guides, trends, and inspiration.
+- **Start a Project (`/start-a-project`)**: Dedicated contact/inquiry page to initiate custom projects.
+
+## Contact Information
+- **Email**: Admin@skykapture.com
+- **Social Media**: Facebook, Instagram, Pinterest, LinkedIn
