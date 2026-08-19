@@ -34,7 +34,7 @@
    🎯 WRAPPER & CONTAINER
    ========================================== */
 .contactus-wrapper {
-  width: 99vw;
+  width: 100%;
   background-color: #F3F2EE;
   display: flex;
   justify-content: center;
