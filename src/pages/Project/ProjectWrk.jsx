@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../components/Home/css/FeaturedWorks.css';
 import "./css/ProjectWrk.css"
-import img1 from '../../assets/project1.webp';
+import img1 from '../../assets/skykaptureimage1.webp';
 import img2 from '../../assets/project2.webp';
 import img3 from '../../assets/project3.webp';
 import img4 from '../../assets/project4.webp';

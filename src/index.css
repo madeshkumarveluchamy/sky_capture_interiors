@@ -3,17 +3,20 @@
 @font-face {
   font-family: 'Futura';
   src: url('./NewFonts/Futura Now Headline.woff2') format('woff2');
- 
+  font-weight: 600; /* இதை சேர்க்கவும் */
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'Futura';
-  src: url('./NewFonts/Futura Now Headline.woff') format('woff2');
-
+  src: url('./NewFonts/Futura Now Headline.woff') format('woff'); /* இங்கு woff2 என்று இருந்ததை woff என மாற்றவும் */
+  font-weight: 600; /* இதையும் சேர்க்கவும் */
+  font-style: normal;
 }
 
-.Futura-font{
-  font-family: 'Futura ', sans-serif !important;
+.Futura-font {
+  font-family: 'Futura', sans-serif !important;
+  font-weight: 600 !important;
 }
 
 html, body, #root, .App {
